@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         noBtn.style.left = Math.random() * 80 + "%";
 
         if (hoverCount >= 3) {
-            yesScale += 0.2;
+            yesScale *= 1.4;
             yesBtn.style.transform = `scale(${yesScale})`;
         }
     }
