@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="3;url=/agreement" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <h1>I knew you are my bestie ❤️</h1>
-            <p>
-                I'm sorry for not listening about outside food.
-                I know you care about me.
-                I’ll try to improve.
-            </p>
-            <p>Redirecting to agreement...</p>
-        </div>
+<div class="container">
+    <div class="card">
+        <h1>I knew you are my bestie ❤️</h1>
+
+        <p>
+            I'm sorry for not listening to you.
+         mujhe pata hai you care alot about me.
+            I’ll obey all your words from now forgive me.
+        </p>
+
+        <h2 id="countdownText" style="margin-top:20px;">
+            redirecting you to agreement
+        </h2>
     </div>
+</div>
+
+<script>
+    let seconds = 15;
+    const countdownText = document.getElementById("countdownText");
+
+    const interval = setInterval(() => {
+        seconds--;
+        countdownText.textContent = "Loading agreement in " + seconds + "...";
+
+        if (seconds <= 0) {
+            clearInterval(interval);
+            window.location.href = "/agreement";
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
+
