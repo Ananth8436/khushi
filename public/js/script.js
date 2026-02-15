@@ -1,25 +1,36 @@
 let hoverCount = 0;
 let yesScale = 1;
 
-function moveNo() {
+document.addEventListener("DOMContentLoaded", function () {
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
 
-    hoverCount++;
+    function moveNo() {
+        hoverCount++;
 
-    // Move No button randomly
-    noBtn.style.position = "absolute";
-    noBtn.style.top = Math.random() * 80 + "%";
-    noBtn.style.left = Math.random() * 80 + "%";
+        noBtn.style.position = "absolute";
+        noBtn.style.top = Math.random() * 80 + "%";
+        noBtn.style.left = Math.random() * 80 + "%";
 
-    // After 3 attempts, start growing YES button
-    if (hoverCount >= 3) {
-        yesScale += 0.2;   // Increase size gradually
-        yesBtn.style.transform = `scale(${yesScale})`;
+        if (hoverCount >= 3) {
+            yesScale += 0.2;
+            yesBtn.style.transform = `scale(${yesScale})`;
+        }
     }
-}
 
-function goToMessage() {
-    window.location.href = "/message";
-}
+    // Desktop (hover)
+    noBtn.addEventListener("mouseover", moveNo);
+
+    // Mobile (touch)
+    noBtn.addEventListener("touchstart", function (e) {
+        e.preventDefault(); // prevent accidental click
+        moveNo();
+    });
+
+    // Yes click
+    yesBtn.addEventListener("click", function () {
+        window.location.href = "/message";
+    });
+});
+
 
