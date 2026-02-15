@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #c8f7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;   /* instead of full height */
+}
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 360px;        /* Smaller */
+    max-width: 92%;      /* Mobile safe */
+    padding: 25px 25px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+    font-size: 21px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card h2 {
+    font-size: 22px;
+    color: #222;
+}
+.card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+.card ul li {
+    margin-bottom: 4px;
+}
+
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.yes {
+    background: #ff6fa5;
+    color: white;
+}
+
+.no {
+    background: #999;
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+input {
+    padding: 8px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+    .card {
+        padding: 25px 20px;
+    }
+
+    .card h1 {
+        font-size: 22px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+}
+

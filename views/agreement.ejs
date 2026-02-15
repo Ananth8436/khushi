@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h1>Healthy Bestie Agreement 📝</h1>
+
+        <ul style="text-align:left; margin-top:20px;">
+            <li>mein bahar ka khana nhi khaunga jab tak majboori na ho 🍔</li>
+            <li>Teri har baat manunga jo tu mere concern ke liye bole ❤️</li>
+            <li>Bina tere last message ko seen kare i'll not go offline 😌</li>
+            <li>We stay best friends forever 🤞</li>
+            <li>If I break this agreement and eat outside too much, I accept silent treatment from you 😅</li>
+
+        </ul>
+
+        <% if (!signed) { %>
+
+            <form action="/signed" method="POST" style="margin-top:20px;">
+                <p>This agreement is between you and me</p>
+                <p>already signed by</p>
+                <p><strong><%= myName %></strong></p>
+
+                <input type="text" 
+                       name="herName" 
+                       placeholder="Enter your name to sign" 
+                       required>
+
+                <br><br>
+                <button type="submit" class="btn yes">
+                    Sign Agreement
+                </button>
+            </form>
+
+        <% } else { %>
+
+            <hr style="margin:25px 0;">
+
+            <h3>Officially Signed By:</h3>
+
+            <p style="font-size:18px; margin-top:10px;">
+                ✍️ <strong><%= myName %></strong><br>
+                ✍️ <strong><%= herName %></strong>
+            </p>
+
+            <hr style="margin:25px 0;">
+
+            <h2>Now you officially can't stay mad at me 😌</h2>
+            <p>
+                Thank you for caring about my health.  
+                I promise I'll try to be better ❤️
+            </p>
+
+        <% } %>
+
+    </div>
+</div>
+
+</body>
+</html>
